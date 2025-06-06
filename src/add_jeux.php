@@ -16,7 +16,7 @@ if ($_POST) {
         $first_name = strip_tags($_POST["last_name"]);
 
         // * Définition de la variable id
-        // $id = $_POST["id"];
+        $id = $_POST["id"];
 
         // * Définition de la variable first_name
         $first_name = $_POST["first_name"];
@@ -43,7 +43,7 @@ if ($_POST) {
         $query->bindValue(":last_name", $last_name, PDO::PARAM_STR_CHAR);
 
         // * Exécution de la requête SQL
-        $query->execute();
+        // $query->execute();
 
         // * récupération des données de la requête sql
         // $utilisateurs = $query->fetchAll(PDO::FETCH_ASSOC);

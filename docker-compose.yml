@@ -36,7 +36,7 @@ services:
       PMA_PASSWORD: root # Mot de passe MySQL
       UPLOAD_LIMIT: 20M # Taille max des fichiers
     ports:
-      - '8080:80' # Interface accessible sur http://localhost:8080
+      - '8081:80' # Interface accessible sur http://localhost:8080
 
   
   

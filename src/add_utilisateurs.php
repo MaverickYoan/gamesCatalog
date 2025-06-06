@@ -1,28 +1,63 @@
 <?php
-require_once "connect.php";
+// * Afficher les données rentrées dans le formualire de $_POST
+if ($_POST) {
+    // print_r($_POST);
 
-// $id = "public.utilisateurs.id";
+    // * Est-ce que les champs de formulaire sont définis
+    if (
+        isset($_POST["first_name"])
+        && isset($_POST["last_name"])
+        && !empty($_POST["first_name"])
+        && !empty($_POST["last_name"])
+    ) {
 
+        // * Enlève les balises HTML et PHP des STRING
+        $first_name = strip_tags($_POST["first_name"]);
+        $first_name = strip_tags($_POST["last_name"]);
 
-// * Définitions de variables
-$id = $_GET["id"];
-print_r($id);
+        // * Définition de la variable id
+        $id = $_POST["id"];
 
-// * sql SELECT
-$sql = "SELECT * FROM utilisateurs WHERE id = :id";
+        // * Définition de la variable first_name
+        $first_name = $_POST["first_name"];
 
-// * préparation de la requête sql
-$query = $db->prepare($sql);
-$query->bindValue(":id", $id, PDO::PARAM_INT);
+        // * Définition de la variable last_name
+        $last_name = $_POST["last_name"];
 
-// * exécution de la requête sql
-$query->execute();
+        // * Check si connexion réussie
+        require_once "connect.php";
 
-$intern = $query->fetch();
-print_r($utilisateur);
+        // * Requête SQL pour ajouter des données (finir le commentaire)
+        $sql = "INSERT INTO utilisateurs (first_name, last_name) VALUES (:first_name, :last_name)";
 
-require "disconnect.php";
+        // * préparation de la base de données SQL
+        $query = $db->prepare($sql);
 
+        // * Rattacher les valeurs de bindValue id à la requête SQL
+        // $query->bindValue(":id", $id, PDO::PARAM_INT);
+
+        // * Rattacher les valeurs de bindValue first_name à la requête SQL
+        $query->bindValue(":first_name", $first_name, PDO::PARAM_STR_CHAR);
+
+        // * Rattacher les valeurs de bindValue last_name à la requête SQL
+        $query->bindValue(":last_name", $last_name, PDO::PARAM_STR_CHAR);
+
+        // * Exécution de la requête SQL
+        // $query->execute();
+
+        // * récupération des données de la requête sql
+        // $utilisateurs = $query->fetchAll(PDO::FETCH_ASSOC);
+
+        // * close de la fonction connexion réussie
+        require "disconnect.php";
+
+        // * Renvoyer le nouvel utilisateurs à la page d'accueil après ajout
+        header("Location: index.php");
+
+        // * Pour terminer toutes exécution de scripts
+        exit;
+    }
+}
 ?>
 
 <!-- http://localhost:8000/jeux.php?id=3 -->

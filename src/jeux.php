@@ -5,13 +5,13 @@ require_once "connect.php";
 $sql = "SELECT * FROM add_utilisateurs";
 
 // * préparation de la requête sql
-$query = $db->prepare($sql);
+// $query = $db->prepare($sql);
 
 // * exécution de la requête sql
-$query->execute();
+// $query->execute();
 
 // * récupération des données de la requête sql
-$add_utilisateurs = $query->fetchAll(PDO::FETCH_ASSOC);
+// $add_utilisateurs = $query->fetchAll(PDO::FETCH_ASSOC);
 
 // * afficher la table utilisateurs
 print_r($utilisateurs);
