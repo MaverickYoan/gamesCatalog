@@ -1,0 +1,57 @@
+services:
+  php:
+    image: php:8.3-apache
+    container_name: crud_php
+    ports:
+      - '8000:80' # on définit le port pour accéder à l'application (localhost:8000) - incrémenter si le port est déjà utilisé par un autre projet
+    volumes:
+      - ./src:/var/www/html # on monte le dossier courant dans le dossier /var/www/html du container
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+  db:
+    image: postgres:15
+    container_name: crud_db
+    environment:
+      POSTGRES_PASSWORD: test
+      POSTGRES_USER: test
+      POSTGRES_DB: project_crud
+      # Variables pour résoudre les problèmes d'initialisation
+      PGUSER: test
+      POSTGRES_HOST_AUTH_METHOD: trust
+    volumes:
+      - ./data:/docker-entrypoint-initdb.d # création de la table et insertion des données à partir du fichier users_postgres.sql
+    ports:
+      - '5432:5432' #  incrémenter si le port est déjà utilisé par un autre projet
+  
+  # Interface PHPMyAdmin
+  phpma:
+    image: phpmyadmin/phpmyadmin
+    container_name: monprojet_phpmyadmin
+    environment:
+      PMA_ARBITRARY: 1
+      PMA_HOST: db # Connexion au service MySQL
+      PMA_USER: root # Utilisateur MySQL
+      PMA_PASSWORD: root # Mot de passe MySQL
+      UPLOAD_LIMIT: 20M # Taille max des fichiers
+    ports:
+      - '8080:80' # Interface accessible sur http://localhost:8080
+
+  
+  
+  # pgadmin:
+  #   image: dpage/pgadmin4
+  #   container_name: crud_pgadmin
+  #   environment:
+  #     PGADMIN_DEFAULT_EMAIL: admin@admin.com
+  #     PGADMIN_DEFAULT_PASSWORD: admin
+  #     # Simplification de la configuration - pas de fichiers externes
+  #     PGADMIN_CONFIG_SERVER_MODE: 'False'
+  #     PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED: 'False'
+  #   ports:
+  #     - '8082:80' # on définit le port pour accéder à pgadmin (localhost:8080) - incrémenter si le port est déjà utilisé par un autre projet
+  #   volumes:
+  #     - ./data/servers.json:/pgadmin4/servers.json
+  #   depends_on:
+  #     - db
