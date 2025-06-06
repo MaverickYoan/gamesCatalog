@@ -3,7 +3,7 @@
 require_once "connect.php";
 
 // * sql SELECT
-$sql = "SELECT * FROM formation";
+$sql = "SELECT * FROM utilisateur";
 
 // * préparation de la requête sql
 $query = $db->prepare($sql);
@@ -12,10 +12,10 @@ $query = $db->prepare($sql);
 $query->execute();
 
 // * récupération des données de la requête sql
-$formation = $query->fetchAll(PDO::FETCH_ASSOC);
+$utilisateur = $query->fetchAll(PDO::FETCH_ASSOC);
 
-// * afficher la table formation
-print_r($formation);
+// * afficher la table utilisateur
+print_r($utilisateur);
 
 // * close de la fonction connexion réussie
 require "disconnect.php";
@@ -42,13 +42,13 @@ require "disconnect.php";
 <body id="content">
 
     <h1>Contact</h1>
-    <p>créer table sql formation</p>
+    <p>créer table sql utilisateur</p>
 
-    <h1 style="color:green; font-size:14px;">TABLE SQL formation</h1>
+    <h1 style="color:green; font-size:14px;">TABLE SQL utilisateur</h1>
     <pre><?php
-            print_r($formation)
+            print_r($utilisateur)
             ?></pre>
-    <!-- // * Table formation -->
+    <!-- // * Table utilisateur -->
     <table style="border:1px solid black;">
         <thead style="border:1px solid black;">
             <th style="border:1px solid black;">id</th>
@@ -65,12 +65,12 @@ require "disconnect.php";
             </tr>
 
             <?php
-            foreach ($formation as $intern): ?>
+            foreach ($utilisateur as $intern): ?>
                 <tr>
                     <td><?= $intern['id'] ?></td>
                     <td><?= $intern['first_name'] ?></td>
                     <td><?= $intern['last_name'] ?></td>
-                    <td><a href="stagiaire.php?id=<?= $intern['id'] ?>">Infos</a></td>
+                    <td><a href="jeux.php?id=<?= $intern['id'] ?>">Infos</a></td>
 
                 </tr>
             <?php endforeach ?>
@@ -83,7 +83,7 @@ require "disconnect.php";
     <!-- NAVBAR -->
     <nav class="navbar">
         <ul class="nav-links" id="navLinks">
-            <li><a class="links" href="http://localhost:8000/stagiaire.php?=0">stagiaire</a></li>
+            <li><a class="links" href="http://localhost:8000/jeux.php?=0">jeux</a></li>
             <li><a class="links" href="http://localhost:8000/index.php">index</a></li>
             <li><a class="links" href="http://localhost:8000/add_interns.php">add_interns</a></li>
             <li><a class="links" href="http://localhost:8000/add.php">Ajout User</a></li>
@@ -102,11 +102,11 @@ require "disconnect.php";
 
     <?php
 
-    // Affiche toutes les informations, comme le ferait INFO_ALL
+    // Affiche toutes les inutilisateurs, comme le ferait INFO_ALL
     // phpinfo();
 
-    // Affiche uniquement le module d'information.
-    // phpinfo(8) fournirait les mêmes informations.
+    // Affiche uniquement le module d'inutilisateur.
+    // phpinfo(8) fournirait les mêmes inutilisateurs.
     // phpinfo(INFO_MODULES);
 
     ?>

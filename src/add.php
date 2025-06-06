@@ -28,7 +28,7 @@ if ($_POST) {
         require_once "connect.php";
 
         // * Requête SQL pour ajouter des données (finir le commentaire)
-        $sql = "INSERT INTO formation (first_name, last_name) VALUES (:first_name, :last_name)";
+        $sql = "INSERT INTO utilisateur (first_name, last_name) VALUES (:first_name, :last_name)";
 
         // * préparation de la base de données SQL
         $query = $db->prepare($sql);
@@ -46,7 +46,7 @@ if ($_POST) {
         $query->execute();
 
         // * récupération des données de la requête sql
-        // $formation = $query->fetchAll(PDO::FETCH_ASSOC);
+        // $utilisateur = $query->fetchAll(PDO::FETCH_ASSOC);
 
         // * close de la fonction connexion réussie
         require "disconnect.php";
@@ -79,7 +79,7 @@ if ($_POST) {
     <!-- NAVBAR -->
     <nav class="navbar">
         <ul class="nav-links" id="navLinks">
-            <li><a class="links" href="http://localhost:8000/stagiaire.php?=0">stagiaire</a></li>
+            <li><a class="links" href="http://localhost:8000/jeux.php?=0">jeux</a></li>
             <li><a class="links" href="http://localhost:8000/index.php">index</a></li>
             <li><a class="links" href="http://localhost:8000/add_interns.php">add_interns</a></li>
             <li><a class="links" href="http://localhost:8000/add.php">Ajout User</a></li>
@@ -88,7 +88,7 @@ if ($_POST) {
         </ul>
     </nav>
 
-    <p style="border: 1px solid black; width: fit-content; background-color: green; color: white"><b>Ajouter un stagiaire</b></p>
+    <p style="border: 1px solid black; width: fit-content; background-color: green; color: white"><b>Ajouter un jeux</b></p>
 
     <!-- post envoie en masquer un formulaire -->
     <form method="post">
