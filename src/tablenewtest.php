@@ -2,7 +2,7 @@
 require_once "connect.php";
 
 // * sql SELECT
-$sql = "SELECT * FROM tablenewtest";
+$sql = "SELECT * FROM add_interns";
 
 // * préparation de la requête sql
 $query = $db->prepare($sql);
@@ -11,7 +11,7 @@ $query = $db->prepare($sql);
 $query->execute();
 
 // * récupération des données de la requête sql
-$tablenewtest = $query->fetchAll(PDO::FETCH_ASSOC);
+$add_interns = $query->fetchAll(PDO::FETCH_ASSOC);
 
 // * afficher la table formation
 print_r($formation);
@@ -32,14 +32,14 @@ require "disconnect.php";
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon.ico" type="image/x-svg">
     <!-- TITRE -->
-    <title>tablenewtest_php_crud</title>
+    <title>add_interns_php_crud</title>
 </head>
 
 <!-- BODY -->
 
 <body id="content">
 
-    <h1>tablenewtest</h1>
+    <h1>add_interns</h1>
     <p>créer table sql formation</p>
 
     <h1 style="color:green; font-size:14px;">TABLE SQL formation</h1>
@@ -68,7 +68,7 @@ require "disconnect.php";
         <ul class="nav-links" id="navLinks">
             <li><a class="links" href="http://localhost:8000/stagiaire.php?=0">stagiaire</a></li>
             <li><a class="links" href="http://localhost:8000/index.php">index</a></li>
-            <li><a class="links" href="http://localhost:8000/tablenewtest.php">tablenewtest</a></li>
+            <li><a class="links" href="http://localhost:8000/add_interns.php">add_interns</a></li>
             <li><a class="links" href="http://localhost:8000/add.php">Ajout User</a></li>
             <li><a class="links" href="http://localhost:8000/contact.php">Contact</a></li>
             <a href="/">Back to menu</a>
