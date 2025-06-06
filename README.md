@@ -38,7 +38,7 @@ Le projet inclut trois services Docker :
 
    - Port : 5432
    - Base de données : project_name
-   - Utilisateur : test
+   - utilisateurs : test
    - Mot de passe : test
    - Root password : root
 

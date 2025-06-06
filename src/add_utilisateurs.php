@@ -1,7 +1,7 @@
 <?php
 require_once "connect.php";
 
-// $id = "public.utilisateur.id";
+// $id = "public.utilisateurs.id";
 
 
 // * Définitions de variables
@@ -9,7 +9,7 @@ $id = $_GET["id"];
 print_r($id);
 
 // * sql SELECT
-$sql = "SELECT * FROM utilisateur WHERE id = :id";
+$sql = "SELECT * FROM utilisateurs WHERE id = :id";
 
 // * préparation de la requête sql
 $query = $db->prepare($sql);
@@ -45,15 +45,15 @@ require "disconnect.php";
         <ul class="nav-links" id="navLinks">
             <li><a class="links" href="http://localhost:8000/jeux.php?=0">jeux</a></li>
             <li><a class="links" href="http://localhost:8000/index.php">index</a></li>
-            <li><a class="links" href="http://localhost:8000/add_interns.php">add_interns</a></li>
-            <li><a class="links" href="http://localhost:8000/add.php">Ajout User</a></li>
+            <li><a class="links" href="http://localhost:8000/add_utilisateurs.php">add_utilisateurs</a></li>
+            <li><a class="links" href="http://localhost:8000/add_jeux.php">add jeu</a></li>
             <li><a class="links" href="http://localhost:8000/contact.php">Contact</a></li>
             <a href="/">Back to menu</a>
         </ul>
     </nav>
 
     <hr />
-    <img width="10%" src="w6a6775zvp661.gif" alt="gif d'ajout d'utilisateur">
+    <img width="10%" src="w6a6775zvp661.gif" alt="gif d'ajout d'utilisateurs">
     <br>
     <h1>jeux</h1>
     <p>Prénom : Yo</p>

@@ -14,7 +14,7 @@ Ce fichier `config.json` permet de configurer automatiquement la connexion entre
 			"Host": "db", // Nom d'hôte (nom du service dans docker-compose)
 			"Port": 5432, // Port PostgreSQL standard
 			"MaintenanceDB": "introsql", // Base de données par défaut
-			"Username": "test", // Nom d'utilisateur
+			"Username": "test", // Nom d'utilisateurs
 			"Password": "test", // Mot de passe
 			"SSLMode": "prefer" // Mode de connexion SSL
 		}

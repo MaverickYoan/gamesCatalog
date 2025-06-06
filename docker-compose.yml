@@ -32,7 +32,7 @@ services:
     environment:
       PMA_ARBITRARY: 1
       PMA_HOST: db # Connexion au service MySQL
-      PMA_USER: root # Utilisateur MySQL
+      PMA_USER: root # utilisateurs MySQL
       PMA_PASSWORD: root # Mot de passe MySQL
       UPLOAD_LIMIT: 20M # Taille max des fichiers
     ports:

@@ -2,7 +2,7 @@
 require_once "connect.php";
 
 // * sql SELECT
-$sql = "SELECT * FROM utilisateur";
+$sql = "SELECT * FROM utilisateurs";
 
 // * préparation de la requête sql
 $query = $db->prepare($sql);
@@ -11,10 +11,10 @@ $query = $db->prepare($sql);
 $query->execute();
 
 // * récupération des données de la requête sql
-$utilisateur = $query->fetchAll(PDO::FETCH_ASSOC);
+$utilisateurs = $query->fetchAll(PDO::FETCH_ASSOC);
 
-// * afficher la table utilisateur
-// print_r($utilisateur);
+// * afficher la table utilisateurs
+// print_r($utilisateurs);
 
 require "disconnect.php";
 ?>
@@ -40,13 +40,13 @@ require "disconnect.php";
 <body id="content">
 
     <h1>Index</h1>
-    <p>créer table sql utilisateur</p>
+    <p>créer table sql utilisateurs</p>
 
-    <h1 style="color:green; font-size:14px;">TABLE SQL utilisateur</h1>
+    <h1 style="color:green; font-size:14px;">TABLE SQL utilisateurs</h1>
     <pre><?php
-            // print_r($utilisateur)
+            // print_r($utilisateurs)
             ?></pre>
-    <!-- // * Table utilisateur -->
+    <!-- // * Table utilisateurs -->
     <table style="border:1px solid black;">
         <thead style="border:1px solid black;">
             <th style="border:1px solid black;">id</th>
@@ -63,7 +63,7 @@ require "disconnect.php";
             </tr>
 
             <?php
-            foreach ($utilisateur as $intern): ?>
+            foreach ($utilisateurs as $intern): ?>
                 <tr>
                     <td><?= $intern['id'] ?></td>
                     <td><?= $intern['first_name'] ?></td>
@@ -77,9 +77,9 @@ require "disconnect.php";
     </table>
 
     <br>
-    <img width="10%" src="11919432.gif" alt="gif d'ajout d'utilisateur">
+    <img width="10%" src="11919432.gif" alt="gif d'ajout d'utilisateurs">
     <br>
-    <a href="./add.php"><button>Ajouter un jeux</button></a>
+    <a href="./jeux.php"><button>Ajouter un jeux</button></a>
 
     <br>
 
@@ -88,8 +88,8 @@ require "disconnect.php";
         <ul class="nav-links" id="navLinks">
             <li><a class="links" href="http://localhost:8000/jeux.php?=0">jeux</a></li>
             <li><a class="links" href="http://localhost:8000/index.php">index</a></li>
-            <li><a class="links" href="http://localhost:8000/add_interns.php">add_interns</a></li>
-            <li><a class="links" href="http://localhost:8000/add.php">Ajout User</a></li>
+            <li><a class="links" href="http://localhost:8000/add_utilisateurs.php">add_utilisateurs</a></li>
+            <li><a class="links" href="http://localhost:8000/add_jeux.php">add jeu</a></li>
             <li><a class="links" href="http://localhost:8000/contact.php">Contact</a></li>
             <a href="/">Back to menu</a>
         </ul>
@@ -100,11 +100,11 @@ require "disconnect.php";
 
     <?php
 
-    // Affiche toutes les inutilisateurs, comme le ferait INFO_ALL
+    // Affiche toutes les utilisateurs, comme le ferait INFO_ALL
     // phpinfo();
 
-    // Affiche uniquement le module d'inutilisateur.
-    // phpinfo(8) fournirait les mêmes inutilisateurs.
+    // Affiche uniquement le module d'utilisateurs.
+    // phpinfo(8) fournirait les mêmes utilisateurs.
     // phpinfo(INFO_MODULES);
 
     ?>

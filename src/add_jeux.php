@@ -28,7 +28,7 @@ if ($_POST) {
         require_once "connect.php";
 
         // * Requête SQL pour ajouter des données (finir le commentaire)
-        $sql = "INSERT INTO utilisateur (first_name, last_name) VALUES (:first_name, :last_name)";
+        $sql = "INSERT INTO utilisateurs (first_name, last_name) VALUES (:first_name, :last_name)";
 
         // * préparation de la base de données SQL
         $query = $db->prepare($sql);
@@ -46,12 +46,12 @@ if ($_POST) {
         $query->execute();
 
         // * récupération des données de la requête sql
-        // $utilisateur = $query->fetchAll(PDO::FETCH_ASSOC);
+        // $utilisateurs = $query->fetchAll(PDO::FETCH_ASSOC);
 
         // * close de la fonction connexion réussie
         require "disconnect.php";
 
-        // * Renvoyer le nouvel utilisateur à la page d'accueil après ajout
+        // * Renvoyer le nouvel utilisateurs à la page d'accueil après ajout
         header("Location: index.php");
 
         // * Pour terminer toutes exécution de scripts
@@ -74,15 +74,15 @@ if ($_POST) {
 
 <body>
 
-    <img width="10%" src="user-3-16403 (1).gif" alt="gif d'ajout d'utilisateur">
+    <img width="10%" src="user-3-16403 (1).gif" alt="gif d'ajout d'utilisateurs">
 
     <!-- NAVBAR -->
     <nav class="navbar">
         <ul class="nav-links" id="navLinks">
             <li><a class="links" href="http://localhost:8000/jeux.php?=0">jeux</a></li>
             <li><a class="links" href="http://localhost:8000/index.php">index</a></li>
-            <li><a class="links" href="http://localhost:8000/add_interns.php">add_interns</a></li>
-            <li><a class="links" href="http://localhost:8000/add.php">Ajout User</a></li>
+            <li><a class="links" href="http://localhost:8000/add_utilisateurs.php">add_utilisateurs</a></li>
+            <li><a class="links" href="http://localhost:8000/add_jeux.php">add jeu</a></li>
             <li><a class="links" href="http://localhost:8000/contact.php">Contact</a></li>
             <a href="/">Back to menu</a>
         </ul>
