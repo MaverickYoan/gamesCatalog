@@ -1,6 +1,6 @@
 <?php
 const SERVER_NAME = "db";
-const DB_NAME = 'project_crud';
+const DB_NAME = 'project_crud_catalog';
 const USERNAME = "test";
 const PASSWORD = "test";
 const PORT = "5432";
