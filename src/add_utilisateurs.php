@@ -19,7 +19,7 @@ $query->bindValue(":id", $id, PDO::PARAM_INT);
 $query->execute();
 
 $intern = $query->fetch();
-print_r($intern);
+print_r($utilisateur);
 
 require "disconnect.php";
 
@@ -34,9 +34,9 @@ require "disconnect.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="favicon.ico" type="image/x-svg">
-    <link rel="stylesheet" href="jeux.css">
+    <link rel="stylesheet" href="styles/styles.css">
     <!-- TITRE -->
-    <title>jeux_php_crud</title>
+    <title>GamesCatalog_jeux</title>
 </head>
 
 <body>

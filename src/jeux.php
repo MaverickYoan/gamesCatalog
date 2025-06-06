@@ -29,10 +29,10 @@ require "disconnect.php";
     <!-- // - 2 - META -->
     <meta charset=utf-8>
     <meta content="width=device-width,initial-scale=1" name=viewport>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/styles.css">
     <link rel="icon" href="favicon.ico" type="image/x-svg">
     <!-- TITRE -->
-    <title>GamesCatalog-add_utilisateurs_php_crud</title>
+    <title>GamesCatalog-add_utilisateurs</title>
 </head>
 
 <!-- BODY -->

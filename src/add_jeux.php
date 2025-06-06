@@ -69,7 +69,7 @@ if ($_POST) {
 <head>
     <meta charset="UTF-8">
     <meta Name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add_php_crud</title>
+    <title>GamesCatalog_Add_jeux</title>
 </head>
 
 <body>

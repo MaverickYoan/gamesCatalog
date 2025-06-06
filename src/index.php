@@ -30,9 +30,9 @@ require "disconnect.php";
     <meta charset=utf-8>
     <meta content="width=device-width,initial-scale=1" name=viewport>
     <link rel="icon" href="favicon.ico" type="image/x-svg">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/styles.css">
     <!-- TITRE -->
-    <title>Index_php_crud</title>
+    <title>GamesCatalog_Index</title>
 </head>
 
 <!-- BODY -->
@@ -63,12 +63,12 @@ require "disconnect.php";
             </tr>
 
             <?php
-            foreach ($utilisateurs as $intern): ?>
+            foreach ($utilisateurs as $utilisateur): ?>
                 <tr>
-                    <td><?= $intern['id'] ?></td>
-                    <td><?= $intern['first_name'] ?></td>
-                    <td><?= $intern['last_name'] ?></td>
-                    <td><a href="jeux.php?id=<?= $intern['id'] ?>">Infos</a></td>
+                    <td><?= $utilisateur['id'] ?></td>
+                    <td><?= $utilisateur['first_name'] ?></td>
+                    <td><?= $utilisateur['last_name'] ?></td>
+                    <td><a href="jeux.php?id=<?= $utilisateur['id'] ?>">Infos</a></td>
 
                 </tr>
             <?php endforeach ?>
